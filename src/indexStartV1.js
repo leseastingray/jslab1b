@@ -39,11 +39,14 @@ function handleClick() {
     // Update the variable xIsNext
     if (xIsNext)
     {
+        squares[id] = "X";
         this.innerHTML = "X";
     }
     else
+    {
+        squares[id] = "O";
         this.innerHTML = "O";
-
+    }
     this.onclick = function(){};
     xIsNext = !xIsNext;
 
@@ -109,7 +112,7 @@ function highlightWinner() {
     for (i = 0; i < winningLine.length; i++)
     {
         var id = winningLine[i];
-        document.getElementById(id).className += "red";
+        document.getElementById(id).className += " red";
     }
     // Disable all of the squares
     disableAll();
