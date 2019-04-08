@@ -69,22 +69,26 @@ function handleClick() {
     }
 }
 
-function calculateWinner() {
-    for (var i = 0; i < lines.length; i++) {
+function calculateWinner() 
+{
+    for (var i = 0; i < lines.length; i++) 
+    {
         var a = lines[i][0];
         var b = lines[i][1];
         var c = lines[i][2];       
         if (squares[a] && 
         squares[a] === squares[b] && 
-        squares[a] === squares[c]) {
+        squares[a] === squares[c]) 
+        {
             winner = squares[a];
             winningLine = lines[i];
             return true;
         }
     }
+    return false;
     winner = null;
     winningLine = Array();
-    return false;
+
 }
 
 //
@@ -105,7 +109,7 @@ function highlightWinner() {
     for (i = 0; i < winningLine.length; i++)
     {
         var id = winningLine[i];
-        document.getElementById(id).className = "red";
+        document.getElementById(id).className += "red";
     }
     // Disable all of the squares
     disableAll();
